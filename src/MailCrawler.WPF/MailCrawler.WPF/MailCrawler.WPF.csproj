@@ -123,6 +123,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converters\InverseBoolConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -157,7 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\MailCrawlerService\MailCrawlerService.csproj">
-      <Project>{1cd7af45-2271-44a1-a890-7b77673b4b94}</Project>
+      <Project>{18d22079-7098-4387-8ffb-de72bcd383eb}</Project>
       <Name>MailCrawlerService</Name>
     </ProjectReference>
   </ItemGroup>

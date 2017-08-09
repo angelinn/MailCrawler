@@ -4,9 +4,54 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MailCrawler.WPF"
+        xmlns:cv="clr-namespace:MailCrawler.WPF.Converters"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="370" Width="525">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <BooleanToVisibilityConverter x:Key="BoolToVis" />
+            <cv:InverseBoolConverter x:Key="InverseBool" />
+        </ResourceDictionary>
+    </Window.Resources>
+
     <Grid>
-        
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            
+            <GroupBox Header="Mail options">
+                <Grid Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Email providers:" HorizontalAlignment="Left" />
+                    <ComboBox Grid.Row="1" Name="cbMain" ItemsSource="{Binding MailProviders}" ItemTemplate="{Binding}" MaxWidth="100" MaxHeight="25" HorizontalAlignment="Left" SelectedItem="{Binding SelectedMail}"/>
+                    <Label Grid.Column="1" Content="{Binding Accounts}" />
+                    <StackPanel Grid.Column="2" Grid.RowSpan="2">
+                        <Button Content="Begin" IsEnabled="{Binding HasAccounts}" Click="Button_Click" MinWidth="70" MaxHeight="30" HorizontalAlignment="Right"/>
+                        <Button Content="Cancel" IsEnabled="{Binding IsLoading}" MinWidth="70" MaxHeight="30" HorizontalAlignment="Right" Margin="0,10,0,0" Click="Button_Click_1" />
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="Log" VerticalAlignment="Stretch" Grid.Row="1" >
+                <ScrollViewer Margin="10" Name="svScroller">
+                    <TextBlock Text="{Binding Links}"/>
+                </ScrollViewer>
+            </GroupBox>
+            
+            <Label Grid.Row="2" Content="{Binding Status}" />
+            <ProgressBar Grid.Row="2" Grid.Column="2" IsEnabled="{Binding IsLoading}" MaxHeight="15" MaxWidth="200" IsIndeterminate="True" Visibility="{Binding IsLoading, Converter={StaticResource BoolToVis}}" />
+        </Grid>
     </Grid>
 </Window>
