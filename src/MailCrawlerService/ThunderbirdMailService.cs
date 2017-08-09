@@ -34,29 +34,22 @@ namespace MailCrawlerService
 
             return mailFiles;
         }
-        
+
         public IEnumerable<string> CrawlMail()
         {
             List<string> urls = new List<string>();
-            int failed = 0;
+            MboxReader reader = new MboxReader();
+
             Regex regex = new Regex(URL_REGEX);
             foreach (string file in GetMailFiles())
             {
-                try
+                foreach (MimeMessage message in reader.Read(file))
                 {
-                    foreach (MimeMessage message in MboxReader.Read(file))
-                    {
-                        foreach (Match match in regex.Matches(URL_REGEX))
-                            urls.Add(match.Value);
-                    }
-                }
-                catch (Exception e)
-                {
-                    ++failed;
-                    continue;
+                    foreach (Match match in regex.Matches(message.HtmlBody))
+                        urls.Add(match.Value);
                 }
             }
-
+            
             return urls;
         }
     }
