@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailCrawler.WPF", "MailCrawler.WPF\MailCrawler.WPF.csproj", "{97425D05-FBA6-4C8C-8544-DE85B05180D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailCrawlerService", "..\MailCrawlerService\MailCrawlerService.csproj", "{1CD7AF45-2271-44A1-A890-7B77673B4B94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailCrawlerService", "..\MailCrawlerService\MailCrawlerService.csproj", "{18D22079-7098-4387-8FFB-DE72BCD383EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{97425D05-FBA6-4C8C-8544-DE85B05180D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97425D05-FBA6-4C8C-8544-DE85B05180D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97425D05-FBA6-4C8C-8544-DE85B05180D7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1CD7AF45-2271-44A1-A890-7B77673B4B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1CD7AF45-2271-44A1-A890-7B77673B4B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1CD7AF45-2271-44A1-A890-7B77673B4B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1CD7AF45-2271-44A1-A890-7B77673B4B94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D22079-7098-4387-8FFB-DE72BCD383EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D22079-7098-4387-8FFB-DE72BCD383EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D22079-7098-4387-8FFB-DE72BCD383EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D22079-7098-4387-8FFB-DE72BCD383EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
